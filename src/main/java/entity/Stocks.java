@@ -1,25 +1,21 @@
 package entity;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import jdk.jfr.events.CertificateId;
-
-@Collection(name ="")
+@Entity
 public class Stocks {
     @Id
-    String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
-    @Field(name ="FullName")
-    String fullName;
+    private String fullName;
+    private String abrv;
+    private int price;
+    private double growth;
+    private double projection;
 
-    @Field(name = "Abrv")
-    String abrv;
+    }
 
-     @Field(name = "Price")
-    int price;
 
-     @Field(name = "growth")
-    double growth;
-
-     @Field(name = "Projection")
-    double projection;
-
-}
