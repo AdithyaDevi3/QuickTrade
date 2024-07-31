@@ -1,27 +1,27 @@
 package com.quicktrade.stockMarketApiService;//package stockMarketApiService;
 //
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.quicktrade.entity.StockData;
 import com.quicktrade.entity.StockDataResponse;
+import com.quicktrade.databaseservice.RepositoryService;
+
 //import entity.StockDataResponse;
 //import netscape.javascript.JSObject;
+import com.quicktrade.entity.Stocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class ApiCall {
 
+    @Autowired
+    RepositoryService repositoryService;
 
     private final WebClient webClient;
 
@@ -29,7 +29,8 @@ public class ApiCall {
     public ApiCall(WebClient webClient) {
         this.webClient = webClient;
     }
-    @Scheduled(fixedRate = 20000)
+    //@Scheduled(cron = "0 0 2 * * *")
+    @Scheduled(fixedRate = 60000)
     public void getData() {
         StockDataResponse data = webClient.get()
                 .uri(getBaseUrl())
@@ -37,7 +38,23 @@ public class ApiCall {
                 .bodyToMono(StockDataResponse.class)
                 .block();
 
-       System.out.println( data.getResults().get(1).getTicker());
+       for(StockData stock: data.getResults()){
+           Stocks stockEntity = new Stocks(
+                   stock.getTicker(),
+                   stock.getVolume(),
+                   stock.getVolumeWeighted(),
+                   stock.getOpen(),
+                   stock.getClose(),
+                   stock.getHigh(),
+                   stock.getLow(),
+                   stock.getTimestamp(),
+                   stock.getTransactions()
+           );
+
+           repositoryService.save(stockEntity);
+       }
+
+
 //
 //         System.out.println("--------------------------------------");
 //        System.out.println(data.toString());
