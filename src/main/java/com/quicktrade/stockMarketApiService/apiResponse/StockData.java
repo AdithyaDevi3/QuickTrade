@@ -1,4 +1,4 @@
-package com.quicktrade.entity;//package com.quicktrade.entity;
+package com.quicktrade.stockMarketApiService.apiResponse;//package com.quicktrade.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class StockData {

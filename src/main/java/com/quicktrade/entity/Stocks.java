@@ -1,6 +1,9 @@
 package com.quicktrade.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
 
 @Entity
 @Table(name = "stocks")
@@ -38,7 +41,7 @@ public class Stocks {
     private int transactions;
 
     // Default constructor
-    public Stocks() {}
+  //  public Stocks() {}
 
     // Parameterized constructor
     public Stocks(String ticker, int volume, double volumeWeighted, double open, double close, double high, double low, long timestamp, int transactions) {

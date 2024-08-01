@@ -1,4 +1,4 @@
-package com.quicktrade.entity;
+package com.quicktrade.stockMarketApiService.apiResponse;
 
 import java.util.List;
 

@@ -1,9 +1,11 @@
 package com.quicktrade.stockMarketApiService;//package stockMarketApiService;
 //
 
-import com.quicktrade.entity.StockData;
-import com.quicktrade.entity.StockDataResponse;
 import com.quicktrade.databaseservice.RepositoryService;
+import com.quicktrade.repository.StockRepository;
+import com.quicktrade.stockMarketApiService.apiResponse.StockData;
+import com.quicktrade.stockMarketApiService.apiResponse.StockDataResponse;
+//import com.quicktrade.databaseservice.RepositoryService;
 
 //import entity.StockDataResponse;
 //import netscape.javascript.JSObject;
@@ -50,7 +52,7 @@ public class ApiCall {
                    stock.getTimestamp(),
                    stock.getTransactions()
            );
-
+        System.out.println(stockEntity.toString());
            repositoryService.save(stockEntity);
        }
 
