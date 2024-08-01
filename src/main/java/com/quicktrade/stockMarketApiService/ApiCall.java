@@ -41,17 +41,19 @@ public class ApiCall {
                 .block();
 
        for(StockData stock: data.getResults()){
-           Stocks stockEntity = new Stocks(
-                   stock.getTicker(),
-                   stock.getVolume(),
-                   stock.getVolumeWeighted(),
-                   stock.getOpen(),
-                   stock.getClose(),
-                   stock.getHigh(),
-                   stock.getLow(),
-                   stock.getTimestamp(),
-                   stock.getTransactions()
-           );
+           Stocks stockEntity = getStocks(stock);
+
+//                   new Stocks(
+//                   stock.getTicker(),
+//                   stock.getVolume(),
+//                   stock.getVolumeWeighted(),
+//                   stock.getOpen(),
+//                   stock.getClose(),
+//                   stock.getHigh(),
+//                   stock.getLow(),
+//                   stock.getTimestamp(),
+//                   stock.getTransactions()
+//           );
         System.out.println(stockEntity.toString());
            repositoryService.save(stockEntity);
        }
@@ -61,6 +63,20 @@ public class ApiCall {
 //         System.out.println("--------------------------------------");
 //        System.out.println(data.toString());
 //        System.out.println("--------------------------------------");
+    }
+
+    private static Stocks getStocks(StockData stock) {
+        Stocks stockEntity = new Stocks();
+        stockEntity.setTicker(stock.getTicker());
+        stockEntity.setVolume(stock.getVolume());
+        stockEntity.setVolumeWeighted(stock.getVolumeWeighted());
+        stockEntity.setOpen(stock.getOpen());
+        stockEntity.setClose(stock.getClose());
+        stockEntity.setHigh(stock.getHigh());
+        stockEntity.setLow(stock.getLow());
+        stockEntity.setTimestamp(stock.getTimestamp());
+        stockEntity.setTransactions(stock.getTransactions());
+        return stockEntity;
     }
 
     @Bean

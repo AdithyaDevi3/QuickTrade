@@ -11,7 +11,7 @@ public class RepositoryService {
 
 
     @Autowired
-    StockRepository stockRepository;
+    private StockRepository stockRepository;
 
     @Transactional
     public void save(Stocks stock){
