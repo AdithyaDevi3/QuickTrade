@@ -1,8 +1,7 @@
 package com.quicktrade.stockMarketApiService;//package stockMarketApiService;
 //
 
-import com.quicktrade.databaseservice.RepositoryService;
-import com.quicktrade.repository.StockRepository;
+import com.quicktrade.db.service.RepositoryService;
 import com.quicktrade.stockMarketApiService.apiResponse.StockData;
 import com.quicktrade.stockMarketApiService.apiResponse.StockDataResponse;
 //import com.quicktrade.databaseservice.RepositoryService;

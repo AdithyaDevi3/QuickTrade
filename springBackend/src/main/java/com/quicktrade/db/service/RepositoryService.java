@@ -1,4 +1,4 @@
-package com.quicktrade.databaseservice;
+package com.quicktrade.db.service;
 
 import com.quicktrade.entity.Stocks;
 import com.quicktrade.repository.StockRepository;
