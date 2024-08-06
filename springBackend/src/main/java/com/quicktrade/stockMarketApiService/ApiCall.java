@@ -30,8 +30,8 @@ public class ApiCall {
     public ApiCall(WebClient webClient) {
         this.webClient = webClient;
     }
-    //@Scheduled(cron = "0 0 2 * * *")
-    @Scheduled(fixedRate = 60000)
+
+    @Scheduled(fixedRate = 12000)
     public void getData() {
         StockDataResponse data = webClient.get()
                 .uri(getBaseUrl())
@@ -41,27 +41,9 @@ public class ApiCall {
 
        for(StockData stock: data.getResults()){
            Stocks stockEntity = getStocks(stock);
-
-//                   new Stocks(
-//                   stock.getTicker(),
-//                   stock.getVolume(),
-//                   stock.getVolumeWeighted(),
-//                   stock.getOpen(),
-//                   stock.getClose(),
-//                   stock.getHigh(),
-//                   stock.getLow(),
-//                   stock.getTimestamp(),
-//                   stock.getTransactions()
-//           );
         System.out.println(stockEntity.toString());
            repositoryService.save(stockEntity);
        }
-
-
-//
-//         System.out.println("--------------------------------------");
-//        System.out.println(data.toString());
-//        System.out.println("--------------------------------------");
     }
 
     private static Stocks getStocks(StockData stock) {
@@ -81,14 +63,12 @@ public class ApiCall {
     @Bean
     private String getBaseUrl(){
 
-        // Get yesterday's date
         LocalDate yesterday = LocalDate.now().minusDays(1);
 
-        // Format the date
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDate = yesterday.format(formatter);
 
-        // Create the base URL with yesterday's date
         return "https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/" + formattedDate + "?adjusted=false&apiKey=mjuTBMGVNRgdO10k4_2tbNeNYBRUu8Vb";
 
     }
