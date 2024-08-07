@@ -1,4 +1,4 @@
-package com.quicktrade.stockMarketApiService.apiResponse;
+package com.quicktrade.stockMarketApiService.apiResponse.stockDataJson;
 
 import java.util.List;
 

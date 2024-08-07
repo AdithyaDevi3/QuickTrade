@@ -46,6 +46,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/springBackend" />
       <recent name="$PROJECT_DIR$/src/main/java/com/quicktrade" />
     </key>
   </component>
@@ -75,50 +76,50 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/databaseservice/RepositoryService.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/db/service/RepositoryService.java</url>
           <line>13</line>
-          <properties field="stockRepository" class="com.quicktrade.databaseservice.RepositoryService" />
+          <properties field="stockRepository" class="com.quicktrade.db.service.RepositoryService" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/databaseservice/RepositoryService.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/db/service/RepositoryService.java</url>
           <line>17</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/repository/StockRepository.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/repository/StockRepository.java</url>
           <line>7</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
           <line>57</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
           <line>42</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
           <line>36</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
           <line>31</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java</url>
           <line>43</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/quicktrade/webclient/WebClientConfig.java</url>
+          <url>file://$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/webclient/WebClientConfig.java</url>
           <line>11</line>
-          <properties class="com.quicktrade.webclient.WebClientConfig" method="webClient">
+          <properties class="com.quicktrade.webclient.WebClientConfig">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
