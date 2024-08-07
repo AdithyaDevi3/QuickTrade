@@ -11,7 +11,7 @@
         <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="t" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="QuickTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="J0d-Kd-dAd">
-                            <segmentedControl key="customView" opaque="NO" contentMode="topRight" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="NVL-U0-rgi">
+                            <segmentedControl key="customView" opaque="NO" contentMode="topRight" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="NVL-U0-rgi">
                                 <rect key="frame" x="84" y="5.6666666666666679" width="293" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -133,7 +133,7 @@
         <!--Second View Controller-->
         <scene sceneID="sGS-zy-hbC">
             <objects>
-                <viewController storyboardIdentifier="Home_Screen" id="DKt-hK-XUH" customClass="SecondViewController" customModule="t" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home_Screen" id="DKt-hK-XUH" customClass="SecondViewController" customModule="QuickTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cj5-jC-TXO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

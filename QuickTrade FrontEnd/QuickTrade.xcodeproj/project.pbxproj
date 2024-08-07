@@ -13,9 +13,9 @@
 		17C5BC472C60317E00843CA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC462C60317E00843CA4 /* Base */; };
 		17C5BC492C60318100843CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC482C60318100843CA4 /* Assets.xcassets */; };
 		17C5BC4C2C60318100843CA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC4B2C60318100843CA4 /* Base */; };
-		17C5BC572C60318100843CA4 /* tTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC562C60318100843CA4 /* tTests.swift */; };
-		17C5BC612C60318100843CA4 /* tUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC602C60318100843CA4 /* tUITests.swift */; };
-		17C5BC632C60318100843CA4 /* tUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC622C60318100843CA4 /* tUITestsLaunchTests.swift */; };
+		17C5BC572C60318100843CA4 /* QuickTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC562C60318100843CA4 /* QuickTradeTests.swift */; };
+		17C5BC612C60318100843CA4 /* QuickTradeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */; };
+		17C5BC632C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */; };
 		17C5BC702C6044D400843CA4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17C5BC3C2C60317E00843CA4 /* t.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = t.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C5BC3C2C60317E00843CA4 /* QuickTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C5BC412C60317E00843CA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17C5BC432C60317E00843CA4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 		17C5BC482C60318100843CA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17C5BC4B2C60318100843CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17C5BC4D2C60318100843CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17C5BC522C60318100843CA4 /* tTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C5BC562C60318100843CA4 /* tTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tTests.swift; sourceTree = "<group>"; };
-		17C5BC5C2C60318100843CA4 /* tUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C5BC602C60318100843CA4 /* tUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tUITests.swift; sourceTree = "<group>"; };
-		17C5BC622C60318100843CA4 /* tUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C5BC562C60318100843CA4 /* QuickTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeTests.swift; sourceTree = "<group>"; };
+		17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTradeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeUITests.swift; sourceTree = "<group>"; };
+		17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,9 +81,9 @@
 		17C5BC332C60317E00843CA4 = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3E2C60317E00843CA4 /* t */,
-				17C5BC552C60318100843CA4 /* tTests */,
-				17C5BC5F2C60318100843CA4 /* tUITests */,
+				17C5BC3E2C60317E00843CA4 /* QuickTrade */,
+				17C5BC552C60318100843CA4 /* QuickTradeTests */,
+				17C5BC5F2C60318100843CA4 /* QuickTradeUITests */,
 				17C5BC3D2C60317E00843CA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,18 +91,17 @@
 		17C5BC3D2C60317E00843CA4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3C2C60317E00843CA4 /* t.app */,
-				17C5BC522C60318100843CA4 /* tTests.xctest */,
-				17C5BC5C2C60318100843CA4 /* tUITests.xctest */,
+				17C5BC3C2C60317E00843CA4 /* QuickTrade.app */,
+				17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */,
+				17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17C5BC3E2C60317E00843CA4 /* t */ = {
+		17C5BC3E2C60317E00843CA4 /* QuickTrade */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */,
-				17C5BC412C60317E00843CA4 /* SceneDelegate.swift */,
+				17E1E50E2C6436F7006E7852 /* Supporting */,
 				17C5BC432C60317E00843CA4 /* FirstViewController.swift */,
 				17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */,
 				17C5BC452C60317E00843CA4 /* Main.storyboard */,
@@ -110,32 +109,41 @@
 				17C5BC4A2C60318100843CA4 /* LaunchScreen.storyboard */,
 				17C5BC4D2C60318100843CA4 /* Info.plist */,
 			);
-			path = t;
+			path = QuickTrade;
 			sourceTree = "<group>";
 		};
-		17C5BC552C60318100843CA4 /* tTests */ = {
+		17C5BC552C60318100843CA4 /* QuickTradeTests */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC562C60318100843CA4 /* tTests.swift */,
+				17C5BC562C60318100843CA4 /* QuickTradeTests.swift */,
 			);
-			path = tTests;
+			path = QuickTradeTests;
 			sourceTree = "<group>";
 		};
-		17C5BC5F2C60318100843CA4 /* tUITests */ = {
+		17C5BC5F2C60318100843CA4 /* QuickTradeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC602C60318100843CA4 /* tUITests.swift */,
-				17C5BC622C60318100843CA4 /* tUITestsLaunchTests.swift */,
+				17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */,
+				17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */,
 			);
-			path = tUITests;
+			path = QuickTradeUITests;
+			sourceTree = "<group>";
+		};
+		17E1E50E2C6436F7006E7852 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */,
+				17C5BC412C60317E00843CA4 /* SceneDelegate.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17C5BC3B2C60317E00843CA4 /* t */ = {
+		17C5BC3B2C60317E00843CA4 /* QuickTrade */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "t" */;
+			buildConfigurationList = 17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTrade" */;
 			buildPhases = (
 				17C5BC382C60317E00843CA4 /* Sources */,
 				17C5BC392C60317E00843CA4 /* Frameworks */,
@@ -145,14 +153,14 @@
 			);
 			dependencies = (
 			);
-			name = t;
+			name = QuickTrade;
 			productName = t;
-			productReference = 17C5BC3C2C60317E00843CA4 /* t.app */;
+			productReference = 17C5BC3C2C60317E00843CA4 /* QuickTrade.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17C5BC512C60318100843CA4 /* tTests */ = {
+		17C5BC512C60318100843CA4 /* QuickTradeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "tTests" */;
+			buildConfigurationList = 17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeTests" */;
 			buildPhases = (
 				17C5BC4E2C60318100843CA4 /* Sources */,
 				17C5BC4F2C60318100843CA4 /* Frameworks */,
@@ -163,14 +171,14 @@
 			dependencies = (
 				17C5BC542C60318100843CA4 /* PBXTargetDependency */,
 			);
-			name = tTests;
+			name = QuickTradeTests;
 			productName = tTests;
-			productReference = 17C5BC522C60318100843CA4 /* tTests.xctest */;
+			productReference = 17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17C5BC5B2C60318100843CA4 /* tUITests */ = {
+		17C5BC5B2C60318100843CA4 /* QuickTradeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "tUITests" */;
+			buildConfigurationList = 17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeUITests" */;
 			buildPhases = (
 				17C5BC582C60318100843CA4 /* Sources */,
 				17C5BC592C60318100843CA4 /* Frameworks */,
@@ -181,9 +189,9 @@
 			dependencies = (
 				17C5BC5E2C60318100843CA4 /* PBXTargetDependency */,
 			);
-			name = tUITests;
+			name = QuickTradeUITests;
 			productName = tUITests;
-			productReference = 17C5BC5C2C60318100843CA4 /* tUITests.xctest */;
+			productReference = 17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTradeNew" */;
+			buildConfigurationList = 17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTrade" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -222,9 +230,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17C5BC3B2C60317E00843CA4 /* t */,
-				17C5BC512C60318100843CA4 /* tTests */,
-				17C5BC5B2C60318100843CA4 /* tUITests */,
+				17C5BC3B2C60317E00843CA4 /* QuickTrade */,
+				17C5BC512C60318100843CA4 /* QuickTradeTests */,
+				17C5BC5B2C60318100843CA4 /* QuickTradeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC572C60318100843CA4 /* tTests.swift in Sources */,
+				17C5BC572C60318100843CA4 /* QuickTradeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC612C60318100843CA4 /* tUITests.swift in Sources */,
-				17C5BC632C60318100843CA4 /* tUITestsLaunchTests.swift in Sources */,
+				17C5BC612C60318100843CA4 /* QuickTradeUITests.swift in Sources */,
+				17C5BC632C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +298,12 @@
 /* Begin PBXTargetDependency section */
 		17C5BC542C60318100843CA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17C5BC3B2C60317E00843CA4 /* t */;
+			target = 17C5BC3B2C60317E00843CA4 /* QuickTrade */;
 			targetProxy = 17C5BC532C60318100843CA4 /* PBXContainerItemProxy */;
 		};
 		17C5BC5E2C60318100843CA4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17C5BC3B2C60317E00843CA4 /* t */;
+			target = 17C5BC3B2C60317E00843CA4 /* QuickTrade */;
 			targetProxy = 17C5BC5D2C60318100843CA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -447,12 +455,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = t/Info.plist;
+				INFOPLIST_FILE = QuickTrade/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,12 +483,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = t/Info.plist;
+				INFOPLIST_FILE = QuickTrade/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +578,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTradeNew" */ = {
+		17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTrade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C5BC642C60318100843CA4 /* Debug */,
@@ -577,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "t" */ = {
+		17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTrade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C5BC672C60318100843CA4 /* Debug */,
@@ -586,7 +596,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "tTests" */ = {
+		17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C5BC6A2C60318100843CA4 /* Debug */,
@@ -595,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "tUITests" */ = {
+		17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17C5BC6D2C60318100843CA4 /* Debug */,
