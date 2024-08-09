@@ -1,13 +1,13 @@
 //
-//  tUITestsLaunchTests.swift
-//  tUITests
+//  QuikTradeUITestsLaunchTests.swift
+//  QuikTradeUITests
 //
-//  Created by Adithya Devi on 8/4/24.
+//  Created by Adithya Devi on 8/7/24.
 //
 
 import XCTest
 
-final class tUITestsLaunchTests: XCTestCase {
+final class QuikTradeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

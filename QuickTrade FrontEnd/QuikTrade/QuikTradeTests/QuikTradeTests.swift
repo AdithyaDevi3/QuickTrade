@@ -1,14 +1,14 @@
 //
-//  tTests.swift
-//  tTests
+//  QuikTradeTests.swift
+//  QuikTradeTests
 //
-//  Created by Adithya Devi on 8/4/24.
+//  Created by Adithya Devi on 8/7/24.
 //
 
 import XCTest
-@testable import t
+@testable import QuikTrade
 
-final class tTests: XCTestCase {
+final class QuikTradeTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

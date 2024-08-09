@@ -7,68 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17C5BC402C60317E00843CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */; };
-		17C5BC422C60317E00843CA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC412C60317E00843CA4 /* SceneDelegate.swift */; };
-		17C5BC442C60317E00843CA4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC432C60317E00843CA4 /* FirstViewController.swift */; };
-		17C5BC472C60317E00843CA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC462C60317E00843CA4 /* Base */; };
-		17C5BC492C60318100843CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC482C60318100843CA4 /* Assets.xcassets */; };
-		17C5BC4C2C60318100843CA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 17C5BC4B2C60318100843CA4 /* Base */; };
-		17C5BC572C60318100843CA4 /* QuickTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC562C60318100843CA4 /* QuickTradeTests.swift */; };
-		17C5BC612C60318100843CA4 /* QuickTradeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */; };
-		17C5BC632C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */; };
-		17C5BC702C6044D400843CA4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */; };
+		17D003252C646AA1001DC8B4 /* QuikTradeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003242C646AA1001DC8B4 /* QuikTradeApp.swift */; };
+		17D003272C646AA1001DC8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003262C646AA1001DC8B4 /* ContentView.swift */; };
+		17D003292C646AA4001DC8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D003282C646AA4001DC8B4 /* Assets.xcassets */; };
+		17D0032C2C646AA4001DC8B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D0032B2C646AA4001DC8B4 /* Preview Assets.xcassets */; };
+		17D003362C646AA5001DC8B4 /* QuikTradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003352C646AA5001DC8B4 /* QuikTradeTests.swift */; };
+		17D003402C646AA5001DC8B4 /* QuikTradeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0033F2C646AA5001DC8B4 /* QuikTradeUITests.swift */; };
+		17D003422C646AA5001DC8B4 /* QuikTradeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003412C646AA5001DC8B4 /* QuikTradeUITestsLaunchTests.swift */; };
+		17D003502C646AFA001DC8B4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0034F2C646AFA001DC8B4 /* HomeView.swift */; };
+		17D003522C646B07001DC8B4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003512C646B07001DC8B4 /* SearchView.swift */; };
+		17D003542C646B14001DC8B4 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003532C646B14001DC8B4 /* AnalyticsView.swift */; };
+		17D003562C646B1F001DC8B4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003552C646B1F001DC8B4 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		17C5BC532C60318100843CA4 /* PBXContainerItemProxy */ = {
+		17D003322C646AA5001DC8B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 17C5BC342C60317E00843CA4 /* Project object */;
+			containerPortal = 17D003192C646AA1001DC8B4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 17C5BC3B2C60317E00843CA4;
-			remoteInfo = t;
+			remoteGlobalIDString = 17D003202C646AA1001DC8B4;
+			remoteInfo = QuikTrade;
 		};
-		17C5BC5D2C60318100843CA4 /* PBXContainerItemProxy */ = {
+		17D0033C2C646AA5001DC8B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 17C5BC342C60317E00843CA4 /* Project object */;
+			containerPortal = 17D003192C646AA1001DC8B4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 17C5BC3B2C60317E00843CA4;
-			remoteInfo = t;
+			remoteGlobalIDString = 17D003202C646AA1001DC8B4;
+			remoteInfo = QuikTrade;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17C5BC3C2C60317E00843CA4 /* QuickTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17C5BC412C60317E00843CA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		17C5BC432C60317E00843CA4 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		17C5BC462C60317E00843CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17C5BC482C60318100843CA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		17C5BC4B2C60318100843CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		17C5BC4D2C60318100843CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C5BC562C60318100843CA4 /* QuickTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeTests.swift; sourceTree = "<group>"; };
-		17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickTradeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeUITests.swift; sourceTree = "<group>"; };
-		17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTradeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		17D003212C646AA1001DC8B4 /* QuikTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuikTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D003242C646AA1001DC8B4 /* QuikTradeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikTradeApp.swift; sourceTree = "<group>"; };
+		17D003262C646AA1001DC8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		17D003282C646AA4001DC8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17D0032B2C646AA4001DC8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		17D003312C646AA5001DC8B4 /* QuikTradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuikTradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D003352C646AA5001DC8B4 /* QuikTradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikTradeTests.swift; sourceTree = "<group>"; };
+		17D0033B2C646AA5001DC8B4 /* QuikTradeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuikTradeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D0033F2C646AA5001DC8B4 /* QuikTradeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikTradeUITests.swift; sourceTree = "<group>"; };
+		17D003412C646AA5001DC8B4 /* QuikTradeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikTradeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17D0034F2C646AFA001DC8B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		17D003512C646B07001DC8B4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		17D003532C646B14001DC8B4 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		17D003552C646B1F001DC8B4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		17C5BC392C60317E00843CA4 /* Frameworks */ = {
+		17D0031E2C646AA1001DC8B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC4F2C60318100843CA4 /* Frameworks */ = {
+		17D0032E2C646AA5001DC8B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC592C60318100843CA4 /* Frameworks */ = {
+		17D003382C646AA5001DC8B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,146 +79,154 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17C5BC332C60317E00843CA4 = {
+		17D003182C646AA1001DC8B4 = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3E2C60317E00843CA4 /* QuickTrade */,
-				17C5BC552C60318100843CA4 /* QuickTradeTests */,
-				17C5BC5F2C60318100843CA4 /* QuickTradeUITests */,
-				17C5BC3D2C60317E00843CA4 /* Products */,
+				17D003232C646AA1001DC8B4 /* QuikTrade */,
+				17D003342C646AA5001DC8B4 /* QuikTradeTests */,
+				17D0033E2C646AA5001DC8B4 /* QuikTradeUITests */,
+				17D003222C646AA1001DC8B4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		17C5BC3D2C60317E00843CA4 /* Products */ = {
+		17D003222C646AA1001DC8B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3C2C60317E00843CA4 /* QuickTrade.app */,
-				17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */,
-				17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */,
+				17D003212C646AA1001DC8B4 /* QuikTrade.app */,
+				17D003312C646AA5001DC8B4 /* QuikTradeTests.xctest */,
+				17D0033B2C646AA5001DC8B4 /* QuikTradeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		17C5BC3E2C60317E00843CA4 /* QuickTrade */ = {
+		17D003232C646AA1001DC8B4 /* QuikTrade */ = {
 			isa = PBXGroup;
 			children = (
-				17E1E50E2C6436F7006E7852 /* Supporting */,
-				17C5BC432C60317E00843CA4 /* FirstViewController.swift */,
-				17C5BC6F2C6044D400843CA4 /* SecondViewController.swift */,
-				17C5BC452C60317E00843CA4 /* Main.storyboard */,
-				17C5BC482C60318100843CA4 /* Assets.xcassets */,
-				17C5BC4A2C60318100843CA4 /* LaunchScreen.storyboard */,
-				17C5BC4D2C60318100843CA4 /* Info.plist */,
+				17D003242C646AA1001DC8B4 /* QuikTradeApp.swift */,
+				17D003262C646AA1001DC8B4 /* ContentView.swift */,
+				17D0034E2C646AC4001DC8B4 /* Views */,
+				17D003282C646AA4001DC8B4 /* Assets.xcassets */,
+				17D0032A2C646AA4001DC8B4 /* Preview Content */,
 			);
-			path = QuickTrade;
+			path = QuikTrade;
 			sourceTree = "<group>";
 		};
-		17C5BC552C60318100843CA4 /* QuickTradeTests */ = {
+		17D0032A2C646AA4001DC8B4 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC562C60318100843CA4 /* QuickTradeTests.swift */,
+				17D0032B2C646AA4001DC8B4 /* Preview Assets.xcassets */,
 			);
-			path = QuickTradeTests;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		17C5BC5F2C60318100843CA4 /* QuickTradeUITests */ = {
+		17D003342C646AA5001DC8B4 /* QuikTradeTests */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC602C60318100843CA4 /* QuickTradeUITests.swift */,
-				17C5BC622C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift */,
+				17D003352C646AA5001DC8B4 /* QuikTradeTests.swift */,
 			);
-			path = QuickTradeUITests;
+			path = QuikTradeTests;
 			sourceTree = "<group>";
 		};
-		17E1E50E2C6436F7006E7852 /* Supporting */ = {
+		17D0033E2C646AA5001DC8B4 /* QuikTradeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				17C5BC3F2C60317E00843CA4 /* AppDelegate.swift */,
-				17C5BC412C60317E00843CA4 /* SceneDelegate.swift */,
+				17D0033F2C646AA5001DC8B4 /* QuikTradeUITests.swift */,
+				17D003412C646AA5001DC8B4 /* QuikTradeUITestsLaunchTests.swift */,
 			);
-			path = Supporting;
+			path = QuikTradeUITests;
+			sourceTree = "<group>";
+		};
+		17D0034E2C646AC4001DC8B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				17D0034F2C646AFA001DC8B4 /* HomeView.swift */,
+				17D003512C646B07001DC8B4 /* SearchView.swift */,
+				17D003532C646B14001DC8B4 /* AnalyticsView.swift */,
+				17D003552C646B1F001DC8B4 /* SettingsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17C5BC3B2C60317E00843CA4 /* QuickTrade */ = {
+		17D003202C646AA1001DC8B4 /* QuikTrade */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTrade" */;
+			buildConfigurationList = 17D003452C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTrade" */;
 			buildPhases = (
-				17C5BC382C60317E00843CA4 /* Sources */,
-				17C5BC392C60317E00843CA4 /* Frameworks */,
-				17C5BC3A2C60317E00843CA4 /* Resources */,
+				17D0031D2C646AA1001DC8B4 /* Sources */,
+				17D0031E2C646AA1001DC8B4 /* Frameworks */,
+				17D0031F2C646AA1001DC8B4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = QuickTrade;
-			productName = t;
-			productReference = 17C5BC3C2C60317E00843CA4 /* QuickTrade.app */;
+			name = QuikTrade;
+			productName = QuikTrade;
+			productReference = 17D003212C646AA1001DC8B4 /* QuikTrade.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17C5BC512C60318100843CA4 /* QuickTradeTests */ = {
+		17D003302C646AA5001DC8B4 /* QuikTradeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeTests" */;
+			buildConfigurationList = 17D003482C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTradeTests" */;
 			buildPhases = (
-				17C5BC4E2C60318100843CA4 /* Sources */,
-				17C5BC4F2C60318100843CA4 /* Frameworks */,
-				17C5BC502C60318100843CA4 /* Resources */,
+				17D0032D2C646AA5001DC8B4 /* Sources */,
+				17D0032E2C646AA5001DC8B4 /* Frameworks */,
+				17D0032F2C646AA5001DC8B4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				17C5BC542C60318100843CA4 /* PBXTargetDependency */,
+				17D003332C646AA5001DC8B4 /* PBXTargetDependency */,
 			);
-			name = QuickTradeTests;
-			productName = tTests;
-			productReference = 17C5BC522C60318100843CA4 /* QuickTradeTests.xctest */;
+			name = QuikTradeTests;
+			productName = QuikTradeTests;
+			productReference = 17D003312C646AA5001DC8B4 /* QuikTradeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17C5BC5B2C60318100843CA4 /* QuickTradeUITests */ = {
+		17D0033A2C646AA5001DC8B4 /* QuikTradeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeUITests" */;
+			buildConfigurationList = 17D0034B2C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTradeUITests" */;
 			buildPhases = (
-				17C5BC582C60318100843CA4 /* Sources */,
-				17C5BC592C60318100843CA4 /* Frameworks */,
-				17C5BC5A2C60318100843CA4 /* Resources */,
+				17D003372C646AA5001DC8B4 /* Sources */,
+				17D003382C646AA5001DC8B4 /* Frameworks */,
+				17D003392C646AA5001DC8B4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				17C5BC5E2C60318100843CA4 /* PBXTargetDependency */,
+				17D0033D2C646AA5001DC8B4 /* PBXTargetDependency */,
 			);
-			name = QuickTradeUITests;
-			productName = tUITests;
-			productReference = 17C5BC5C2C60318100843CA4 /* QuickTradeUITests.xctest */;
+			name = QuikTradeUITests;
+			productName = QuikTradeUITests;
+			productReference = 17D0033B2C646AA5001DC8B4 /* QuikTradeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		17C5BC342C60317E00843CA4 /* Project object */ = {
+		17D003192C646AA1001DC8B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					17C5BC3B2C60317E00843CA4 = {
+					17D003202C646AA1001DC8B4 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					17C5BC512C60318100843CA4 = {
+					17D003302C646AA5001DC8B4 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 17C5BC3B2C60317E00843CA4;
+						TestTargetID = 17D003202C646AA1001DC8B4;
 					};
-					17C5BC5B2C60318100843CA4 = {
+					17D0033A2C646AA5001DC8B4 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 17C5BC3B2C60317E00843CA4;
+						TestTargetID = 17D003202C646AA1001DC8B4;
 					};
 				};
 			};
-			buildConfigurationList = 17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTrade" */;
+			buildConfigurationList = 17D0031C2C646AA1001DC8B4 /* Build configuration list for PBXProject "QuikTrade" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,37 +234,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 17C5BC332C60317E00843CA4;
-			productRefGroup = 17C5BC3D2C60317E00843CA4 /* Products */;
+			mainGroup = 17D003182C646AA1001DC8B4;
+			productRefGroup = 17D003222C646AA1001DC8B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17C5BC3B2C60317E00843CA4 /* QuickTrade */,
-				17C5BC512C60318100843CA4 /* QuickTradeTests */,
-				17C5BC5B2C60318100843CA4 /* QuickTradeUITests */,
+				17D003202C646AA1001DC8B4 /* QuikTrade */,
+				17D003302C646AA5001DC8B4 /* QuikTradeTests */,
+				17D0033A2C646AA5001DC8B4 /* QuikTradeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		17C5BC3A2C60317E00843CA4 /* Resources */ = {
+		17D0031F2C646AA1001DC8B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC492C60318100843CA4 /* Assets.xcassets in Resources */,
-				17C5BC4C2C60318100843CA4 /* Base in Resources */,
-				17C5BC472C60317E00843CA4 /* Base in Resources */,
+				17D0032C2C646AA4001DC8B4 /* Preview Assets.xcassets in Resources */,
+				17D003292C646AA4001DC8B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC502C60318100843CA4 /* Resources */ = {
+		17D0032F2C646AA5001DC8B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC5A2C60318100843CA4 /* Resources */ = {
+		17D003392C646AA5001DC8B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,70 +273,53 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		17C5BC382C60317E00843CA4 /* Sources */ = {
+		17D0031D2C646AA1001DC8B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC702C6044D400843CA4 /* SecondViewController.swift in Sources */,
-				17C5BC442C60317E00843CA4 /* FirstViewController.swift in Sources */,
-				17C5BC402C60317E00843CA4 /* AppDelegate.swift in Sources */,
-				17C5BC422C60317E00843CA4 /* SceneDelegate.swift in Sources */,
+				17D003522C646B07001DC8B4 /* SearchView.swift in Sources */,
+				17D003502C646AFA001DC8B4 /* HomeView.swift in Sources */,
+				17D003272C646AA1001DC8B4 /* ContentView.swift in Sources */,
+				17D003562C646B1F001DC8B4 /* SettingsView.swift in Sources */,
+				17D003542C646B14001DC8B4 /* AnalyticsView.swift in Sources */,
+				17D003252C646AA1001DC8B4 /* QuikTradeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC4E2C60318100843CA4 /* Sources */ = {
+		17D0032D2C646AA5001DC8B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC572C60318100843CA4 /* QuickTradeTests.swift in Sources */,
+				17D003362C646AA5001DC8B4 /* QuikTradeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17C5BC582C60318100843CA4 /* Sources */ = {
+		17D003372C646AA5001DC8B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C5BC612C60318100843CA4 /* QuickTradeUITests.swift in Sources */,
-				17C5BC632C60318100843CA4 /* QuickTradeUITestsLaunchTests.swift in Sources */,
+				17D003402C646AA5001DC8B4 /* QuikTradeUITests.swift in Sources */,
+				17D003422C646AA5001DC8B4 /* QuikTradeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		17C5BC542C60318100843CA4 /* PBXTargetDependency */ = {
+		17D003332C646AA5001DC8B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17C5BC3B2C60317E00843CA4 /* QuickTrade */;
-			targetProxy = 17C5BC532C60318100843CA4 /* PBXContainerItemProxy */;
+			target = 17D003202C646AA1001DC8B4 /* QuikTrade */;
+			targetProxy = 17D003322C646AA5001DC8B4 /* PBXContainerItemProxy */;
 		};
-		17C5BC5E2C60318100843CA4 /* PBXTargetDependency */ = {
+		17D0033D2C646AA5001DC8B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17C5BC3B2C60317E00843CA4 /* QuickTrade */;
-			targetProxy = 17C5BC5D2C60318100843CA4 /* PBXContainerItemProxy */;
+			target = 17D003202C646AA1001DC8B4 /* QuikTrade */;
+			targetProxy = 17D0033C2C646AA5001DC8B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		17C5BC452C60317E00843CA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17C5BC462C60317E00843CA4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		17C5BC4A2C60318100843CA4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17C5BC4B2C60318100843CA4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		17C5BC642C60318100843CA4 /* Debug */ = {
+		17D003432C646AA5001DC8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -391,7 +382,7 @@
 			};
 			name = Debug;
 		};
-		17C5BC652C60318100843CA4 /* Release */ = {
+		17D003442C646AA5001DC8B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -447,27 +438,27 @@
 			};
 			name = Release;
 		};
-		17C5BC672C60318100843CA4 /* Debug */ = {
+		17D003462C646AA5001DC8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuikTrade/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuickTrade/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.trade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,27 +466,27 @@
 			};
 			name = Debug;
 		};
-		17C5BC682C60318100843CA4 /* Release */ = {
+		17D003472C646AA5001DC8B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"QuikTrade/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuickTrade/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.trade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -503,7 +494,7 @@
 			};
 			name = Release;
 		};
-		17C5BC6A2C60318100843CA4 /* Debug */ = {
+		17D003492C646AA5001DC8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -513,16 +504,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.tTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTradeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/t";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuikTrade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuikTrade";
 			};
 			name = Debug;
 		};
-		17C5BC6B2C60318100843CA4 /* Release */ = {
+		17D0034A2C646AA5001DC8B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -532,16 +523,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.tTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTradeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/t.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/t";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuikTrade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuikTrade";
 			};
 			name = Release;
 		};
-		17C5BC6D2C60318100843CA4 /* Debug */ = {
+		17D0034C2C646AA5001DC8B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -549,16 +540,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.tUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTradeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = t;
+				TEST_TARGET_NAME = QuikTrade;
 			};
 			name = Debug;
 		};
-		17C5BC6E2C60318100843CA4 /* Release */ = {
+		17D0034D2C646AA5001DC8B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -566,55 +557,55 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.quicktrade.tUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quiktrade.QuikTradeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = t;
+				TEST_TARGET_NAME = QuikTrade;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17C5BC372C60317E00843CA4 /* Build configuration list for PBXProject "QuickTrade" */ = {
+		17D0031C2C646AA1001DC8B4 /* Build configuration list for PBXProject "QuikTrade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17C5BC642C60318100843CA4 /* Debug */,
-				17C5BC652C60318100843CA4 /* Release */,
+				17D003432C646AA5001DC8B4 /* Debug */,
+				17D003442C646AA5001DC8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC662C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTrade" */ = {
+		17D003452C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTrade" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17C5BC672C60318100843CA4 /* Debug */,
-				17C5BC682C60318100843CA4 /* Release */,
+				17D003462C646AA5001DC8B4 /* Debug */,
+				17D003472C646AA5001DC8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC692C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeTests" */ = {
+		17D003482C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTradeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17C5BC6A2C60318100843CA4 /* Debug */,
-				17C5BC6B2C60318100843CA4 /* Release */,
+				17D003492C646AA5001DC8B4 /* Debug */,
+				17D0034A2C646AA5001DC8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17C5BC6C2C60318100843CA4 /* Build configuration list for PBXNativeTarget "QuickTradeUITests" */ = {
+		17D0034B2C646AA5001DC8B4 /* Build configuration list for PBXNativeTarget "QuikTradeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17C5BC6D2C60318100843CA4 /* Debug */,
-				17C5BC6E2C60318100843CA4 /* Release */,
+				17D0034C2C646AA5001DC8B4 /* Debug */,
+				17D0034D2C646AA5001DC8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 17C5BC342C60317E00843CA4 /* Project object */;
+	rootObject = 17D003192C646AA1001DC8B4 /* Project object */;
 }
