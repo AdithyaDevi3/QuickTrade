@@ -1,44 +1,25 @@
 import SwiftUI
 import Combine
 
+// Define the structure for the match results including the new logoUrl and matchPercentage
 struct Match: Codable, Identifiable {
     var id: String { symbol }
     let symbol: String
     let name: String
-    let type: String
-    let region: String
-    let marketOpen: String
-    let marketClose: String
-    let timezone: String
-    let currency: String
-    let matchScore: String
-
-    enum CodingKeys: String, CodingKey {
-        case symbol = "1. symbol"
-        case name = "2. name"
-        case type = "3. type"
-        case region = "4. region"
-        case marketOpen = "5. marketOpen"
-        case marketClose = "6. marketClose"
-        case timezone = "7. timezone"
-        case currency = "8. currency"
-        case matchScore = "9. matchScore"
-    }
+    let logoUrl: String
+    let matchPercentage: Double
 }
 
-struct SearchResult: Codable {
-    let bestMatches: [Match]?
-}
-
+// ViewModel class handling the search functionality
 class SearchViewModel: ObservableObject {
     @Published var query: String = ""
     @Published var results: [Match] = []
     
-    private let apiKey = "mjuTBMGVNRgdO10k4_2tbNeNYBRUu8Vb"
+    private let backendUrl = "http://localhost:8080/api/search"
 
     func searchCompany() {
         guard !query.isEmpty else { return }
-        let urlString = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(query)&apikey=\(apiKey)"
+        let urlString = "\(backendUrl)?query=\(query)"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -51,12 +32,9 @@ class SearchViewModel: ObservableObject {
             guard let data = data else { return }
             
             do {
-                let jsonString = String(data: data, encoding: .utf8)
-                print("Received JSON: \(jsonString ?? "nil")")
-                
-                let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+                let searchResult = try JSONDecoder().decode([Match].self, from: data)
                 DispatchQueue.main.async {
-                    self.results = searchResult.bestMatches ?? []
+                    self.results = searchResult
                 }
             } catch {
                 print("Failed to decode JSON: \(error)")
@@ -65,6 +43,7 @@ class SearchViewModel: ObservableObject {
     }
 }
 
+// The SearchView UI structure
 struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
     
@@ -92,13 +71,27 @@ struct SearchView: View {
             .padding(.top, -10) // Padding to push down from the top
          
             List(viewModel.results) { match in
-                VStack(alignment: .leading) {
-                    Text(match.name)
-                        .font(.headline)
-                    Text(match.symbol)
-                        .font(.subheadline)
-                    Text("Match Score: \(match.matchScore)")
-                        .font(.subheadline)
+                HStack {
+                    // Display the company logo from logoUrl
+                    if let url = URL(string: match.logoUrl) {
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text(match.name)
+                            .font(.headline)
+                        Text(match.symbol)
+                            .font(.subheadline)
+                        Text("Match Percentage: \(match.matchPercentage, specifier: "%.2f")%")
+                            .font(.subheadline)
+                    }
                 }
             }
             .listStyle(PlainListStyle())
