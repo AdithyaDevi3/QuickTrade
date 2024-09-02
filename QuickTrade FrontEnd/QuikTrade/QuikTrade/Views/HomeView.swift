@@ -20,6 +20,17 @@ struct HomeView: View {
     ]
     
     var body: some View {
+        
+        //needs to be an api call to the top 100 stocks and sort them by movement. THe percentage move on the day will be the determining factor of the order of the stocks
+        
+//        VStack{
+//            ScrollView(.horizontal, showsIndicators: false){
+//                ForEach(0..<5){i in
+//                
+//                    cardView(img :)
+//                }
+//            }
+//        }
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
@@ -27,18 +38,28 @@ struct HomeView: View {
                     let percentGrowth = Double(stock.todayPrice - stock.yesterdayPrice!) / Double(stock.yesterdayPrice!) * 100
                     return StockRowView(stockName: stock.name, todayPrice: stock.todayPrice, percentChange: percentGrowth)
                 }
+                .padding()
                 
                 SectionView(title: "Top Losers", stocks: topLosers) { stock in
                     let percentGrowth = Double(stock.todayPrice - stock.yesterdayPrice!) / Double(stock.yesterdayPrice!) * 100
                     return StockRowView(stockName: stock.name, todayPrice: stock.todayPrice, percentChange: percentGrowth)
                 }
                 
+                .padding()
+                
                 SectionView(title: "Biggest 52-Week Growth", stocks: biggest52WeekGrowth.map { ($0.name, $0.todayPrice, Optional($0.fiftyTwoWeekLow)) }) { stock in
                     let percentGrowth = Double(stock.todayPrice - stock.yesterdayPrice!) / Double(stock.yesterdayPrice!) * 100
                     return StockRowView(stockName: stock.name, todayPrice: stock.todayPrice, percentChange: percentGrowth)
                 }
+                .padding()
+                
                 
                 SectionView(title: "Biggest 52-Week Drop", stocks: biggest52WeekDrop.map { ($0.name, $0.todayPrice, Optional($0.fiftyTwoWeekHigh)) }) { stock in
+                    let percentDrop = Double(stock.yesterdayPrice! - stock.todayPrice) / Double(stock.yesterdayPrice!) * 100
+                    return StockRowView(stockName: stock.name, todayPrice: stock.todayPrice, percentChange: -percentDrop)
+                }
+                .padding()
+                SectionView(title: "Top 100 Popular Stocks", stocks: biggest52WeekDrop.map { ($0.name, $0.todayPrice, Optional($0.fiftyTwoWeekHigh)) }) { stock in
                     let percentDrop = Double(stock.yesterdayPrice! - stock.todayPrice) / Double(stock.yesterdayPrice!) * 100
                     return StockRowView(stockName: stock.name, todayPrice: stock.todayPrice, percentChange: -percentDrop)
                 }

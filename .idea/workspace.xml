@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7dc33c-b17b-4a74-8fc5-bd6cd7e5bc7b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade.xcodeproj/project.xcworkspace/xcuserdata/adithyadevi.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade.xcodeproj/project.xcworkspace/xcuserdata/adithyadevi.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/ContentView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/ContentView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/AnalyticsView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/AnalyticsView.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/HomeView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/HomeView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/SearchView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/SearchView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade Integrator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade Integrator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/controller/RepositoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/controller/RepositoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/repository/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/repository/StockRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade Integrator/src/main/java/quicktrade/com/service/StockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/db/service/RepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/db/service/StockRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/entity/Stocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/entity/Stocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/db/service/RepositoryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/entity/Stocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/entity/Stocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/stockMarketApiService/ApiCall.class" beforeDir="false" afterPath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/stockMarketApiService/ApiCall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/stockMarketApiService/apiResponse/StockData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springBackend/target/classes/com/quicktrade/stockMarketApiService/apiResponse/StockDataResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/SettingsView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/QuickTrade FrontEnd/QuikTrade/QuikTrade/Views/SettingsView.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

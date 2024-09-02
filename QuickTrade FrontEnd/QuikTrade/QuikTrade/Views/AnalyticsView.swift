@@ -5,11 +5,8 @@ struct AnalyticsView: View {
     
     var body: some View {
         VStack {
-            Text("Settings")
-                .font(.largeTitle)
-                .padding()
 
-            Text("Select Difficulty Level")
+            Text("Select Knowledge Level")
                 .font(.headline)
                 .padding(.top)
 
@@ -39,6 +36,7 @@ struct Analytics: View {
            
             if difficulty == "Beginner" {
                 Text("Beginner Content")
+            //    beginnerData()
             } else if difficulty == "Intermediate" {
                 Text("Intermediate Content")
             } else if difficulty == "Advanced" {
@@ -48,6 +46,53 @@ struct Analytics: View {
             Spacer()
         }
         .padding()
+    }
+}
+struct beginnerData: View {
+    var stockName:String;
+    var currentPrice:Double;
+    var marketCap:Double;
+    var PERatio:Double;
+    var dividendYield: Double;
+    var high: Double;
+    var low:Double;
+    var volume:Double;
+    var body: some View {
+        return;
+    }
+}
+struct intermediateData: View {
+var stockName:String;
+    var PSRatio:Double;
+    var PBRatio:Double;
+    var ROE: Double;
+    var RevenueGrowth: Double;
+    var DtoERatio: Double;
+    var dividendPayoutRatio:Double;
+    var beta: Double;
+    var movingAverages: Double;
+    var body: some View {
+        beginnerData();
+        return;
+    
+    
+    }
+}
+
+struct advancedData: View {
+var stockName:String;
+    var enterpriseValue:Double;
+    var returnOnAssets:Double;
+    var interestCoverageRatio: Double;
+    var quickRatio: Double;
+    var assetTurnoverRatio: Double;
+    var inventoryTurnoverRatio:Double;
+    var relativeStrengthIndex: Double;
+    var alpha: Double;
+    var body: some View {
+        intermediateData();
+    
+    
     }
 }
 

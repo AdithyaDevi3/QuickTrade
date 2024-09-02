@@ -9,7 +9,7 @@ struct SettingsView: View {
                 .font(.largeTitle)
                 .padding()
 
-            Text("Select Difficulty Level")
+            Text("Recent Events")
                 .font(.headline)
                 .padding(.top)
 
@@ -49,6 +49,8 @@ struct Settings: View {
             Spacer()
         }
         .padding()
+        
+        
     }
 }
 
