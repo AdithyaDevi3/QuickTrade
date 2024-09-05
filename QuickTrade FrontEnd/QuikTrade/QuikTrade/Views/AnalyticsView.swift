@@ -1,98 +1,134 @@
 import SwiftUI
 
-struct AnalyticsView: View {
-    @AppStorage("difficulty") var difficulty: String = "Beginner"
+// Define the structure for liked stocks
+struct LikedStock: Codable, Identifiable {
+    var id: String { symbol }
+    let symbol: String
+    let name: String
+    let logoUrl: String
+    let matchPercentage: Double
+}
+
+// ViewModel class handling the liked stocks and API calls
+class AnalyticsViewModel: ObservableObject {
+    @Published var likedStocks: [LikedStock] = []
+    @Published var selectedStock: LikedStock?
+    @Published var difficulty: String = "Beginner"
     
-    var body: some View {
-        VStack {
-
-            Text("Select Knowledge Level")
-                .font(.headline)
-                .padding(.top)
-
-            Picker("Difficulty", selection: $difficulty) {
-                Text("Beginner").tag("Beginner")
-                Text("Intermediate").tag("Intermediate")
-                Text("Advanced").tag("Advanced")
+    private let backendUrl = "http://localhost:8080/api/search"
+    private var apiCallTimer: Timer?
+    
+    init() {
+        // Fetch liked stocks from persistent storage or any other source
+        // For example: UserDefaults, CoreData, etc.
+    }
+    
+    func selectStock(_ stock: LikedStock) {
+        self.selectedStock = stock
+    }
+    
+    func fetchStockDetails() {
+        guard let selectedStock = selectedStock else { return }
+        
+        let urlString = "\(backendUrl)?query=\(selectedStock.symbol)"
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                return
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
-
-            Spacer()
+            
+            guard let data = data else { return }
+            
+            do {
+                let searchResult = try JSONDecoder().decode([LikedStock].self, from: data)
+                DispatchQueue.main.async {
+                    self.likedStocks = searchResult
+                }
+            } catch {
+                print("Failed to decode JSON: \(error)")
+            }
+        }.resume()
+        
+        // Manage API call limitation (every 12 seconds)
+        apiCallTimer?.invalidate()
+        apiCallTimer = Timer.scheduledTimer(withTimeInterval: 12.0, repeats: false) { _ in
+            self.fetchStockDetails()
         }
-        .padding()
     }
 }
 
-struct Analytics: View {
-    @AppStorage("difficulty") var difficulty: String = "Beginner"
-
+struct AnalyticsView: View {
+    @StateObject private var viewModel = AnalyticsViewModel()
+    
     var body: some View {
         VStack {
-            Text("Current Difficulty: \(difficulty)")
+            Text("Liked Stocks")
                 .font(.title)
                 .padding()
             
-           
-            if difficulty == "Beginner" {
-                Text("Beginner Content")
-            //    beginnerData()
-            } else if difficulty == "Intermediate" {
-                Text("Intermediate Content")
-            } else if difficulty == "Advanced" {
-                Text("Advanced Content")
+            List(viewModel.likedStocks) { stock in
+                StockRow(stock: stock, viewModel: viewModel)
             }
-            
-            Spacer()
+            .listStyle(PlainListStyle())
         }
         .padding()
-    }
-}
-struct beginnerData: View {
-    var stockName:String;
-    var currentPrice:Double;
-    var marketCap:Double;
-    var PERatio:Double;
-    var dividendYield: Double;
-    var high: Double;
-    var low:Double;
-    var volume:Double;
-    var body: some View {
-        return;
-    }
-}
-struct intermediateData: View {
-var stockName:String;
-    var PSRatio:Double;
-    var PBRatio:Double;
-    var ROE: Double;
-    var RevenueGrowth: Double;
-    var DtoERatio: Double;
-    var dividendPayoutRatio:Double;
-    var beta: Double;
-    var movingAverages: Double;
-    var body: some View {
-        beginnerData();
-        return;
-    
-    
+        .onAppear {
+            viewModel.fetchStockDetails()
+        }
     }
 }
 
-struct advancedData: View {
-var stockName:String;
-    var enterpriseValue:Double;
-    var returnOnAssets:Double;
-    var interestCoverageRatio: Double;
-    var quickRatio: Double;
-    var assetTurnoverRatio: Double;
-    var inventoryTurnoverRatio:Double;
-    var relativeStrengthIndex: Double;
-    var alpha: Double;
+struct StockRow: View {
+    let stock: LikedStock
+    @StateObject var viewModel: AnalyticsViewModel
+    @State private var isExpanded = false
+    
     var body: some View {
-        intermediateData();
-    
-    
+        VStack {
+            HStack {
+                Text(stock.name)
+                    .font(.headline)
+                
+                Spacer()
+                
+                Button(action: {
+                    viewModel.selectStock(stock)
+                    isExpanded.toggle()
+                }) {
+                    Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
+                }
+                .padding(.trailing)
+            }
+            
+            if isExpanded {
+                VStack {
+                    Picker("Difficulty Level", selection: $viewModel.difficulty) {
+                        Text("Beginner").tag("Beginner")
+                        Text("Intermediate").tag("Intermediate")
+                        Text("Advanced").tag("Advanced")
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    if let selectedStock = viewModel.selectedStock {
+                        if viewModel.difficulty == "Beginner" {
+                            BeginnerDataView(stock: selectedStock)
+                        } else if viewModel.difficulty == "Intermediate" {
+                            IntermediateDataView(stock: selectedStock)
+                        } else if viewModel.difficulty == "Advanced" {
+                            AdvancedDataView(stock: selectedStock)
+                        }
+                    }
+                }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(8)
+            }
+        }
+        .padding()
     }
 }
 

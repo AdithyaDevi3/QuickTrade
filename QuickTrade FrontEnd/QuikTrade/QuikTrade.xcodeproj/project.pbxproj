@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172BE97A2C8938F500BC68D8 /* StockDataViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172BE9792C8938F500BC68D8 /* StockDataViews.swift */; };
 		17D003252C646AA1001DC8B4 /* QuikTradeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003242C646AA1001DC8B4 /* QuikTradeApp.swift */; };
 		17D003272C646AA1001DC8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D003262C646AA1001DC8B4 /* ContentView.swift */; };
 		17D003292C646AA4001DC8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D003282C646AA4001DC8B4 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172BE9792C8938F500BC68D8 /* StockDataViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataViews.swift; sourceTree = "<group>"; };
 		17D003212C646AA1001DC8B4 /* QuikTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuikTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D003242C646AA1001DC8B4 /* QuikTradeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuikTradeApp.swift; sourceTree = "<group>"; };
 		17D003262C646AA1001DC8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				17D003512C646B07001DC8B4 /* SearchView.swift */,
 				17D003532C646B14001DC8B4 /* AnalyticsView.swift */,
 				17D003552C646B1F001DC8B4 /* SettingsView.swift */,
+				172BE9792C8938F500BC68D8 /* StockDataViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				17D003522C646B07001DC8B4 /* SearchView.swift in Sources */,
 				17D003502C646AFA001DC8B4 /* HomeView.swift in Sources */,
+				172BE97A2C8938F500BC68D8 /* StockDataViews.swift in Sources */,
 				17D003272C646AA1001DC8B4 /* ContentView.swift in Sources */,
 				17D003562C646B1F001DC8B4 /* SettingsView.swift in Sources */,
 				17D003542C646B14001DC8B4 /* AnalyticsView.swift in Sources */,

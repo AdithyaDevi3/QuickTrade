@@ -12,17 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            //                    // The content or functionality here would adjust based on the difficulty level
-            //                    if difficulty == "Beginner" {
-            //                        // Load or display beginner-level data
-            //                        BeginnerContentView()
-            //                    } else if difficulty == "Intermediate" {
-            //                        // Load or display intermediate-level data
-            //                        IntermediateContentView()
-            //                    } else if difficulty == "Advanced" {
-            //                        // Load or display advanced-level data
-            //                        AdvancedContentView()
-            //                    }
+           
             
             
             TabView {
@@ -42,11 +32,11 @@ struct ContentView: View {
                         Text("Analytics")
                     }
                 SettingsView()
-                    .tabItem() {
-                        Image(systemName: "gear")
-                        Text("Settings")
+                    .tabItem {
+                        Image(systemName: "book.fill")
+                        Text("Definitions")
                     }
-                
+
             }
         }
     }
