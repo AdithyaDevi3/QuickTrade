@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,10 @@
 		17D003532C646B14001DC8B4 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		17D003552C646B1F001DC8B4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		174C19452E788DE100DC8C8F /* AnalyticsData */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AnalyticsData; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		17D0031E2C646AA1001DC8B4 /* Frameworks */ = {
@@ -144,6 +148,7 @@
 				17D0034F2C646AFA001DC8B4 /* HomeView.swift */,
 				17D003512C646B07001DC8B4 /* SearchView.swift */,
 				17D003532C646B14001DC8B4 /* AnalyticsView.swift */,
+				174C19452E788DE100DC8C8F /* AnalyticsData */,
 				17D003552C646B1F001DC8B4 /* SettingsView.swift */,
 				172BE9792C8938F500BC68D8 /* StockDataViews.swift */,
 			);
@@ -164,6 +169,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				174C19452E788DE100DC8C8F /* AnalyticsData */,
 			);
 			name = QuikTrade;
 			productName = QuikTrade;
