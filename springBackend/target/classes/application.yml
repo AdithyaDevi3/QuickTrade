@@ -21,3 +21,7 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+
+# Polygon.io API key — override with POLYGON_API_KEY environment variable in production
+polygon:
+  api-key: ${POLYGON_API_KEY:mjuTBMGVNRgdO10k4_2tbNeNYBRUu8Vb}

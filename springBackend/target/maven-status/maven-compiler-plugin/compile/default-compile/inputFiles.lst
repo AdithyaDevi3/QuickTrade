@@ -1,6 +1,24 @@
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/Application.java
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/dbService/RepositoryService.java
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/entity/StockDataResponse.java
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/entity/Stocks.java
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/repository/StockRepository.java
-/Users/adithyadevi/workspace/Personal Projects/QuickTrade/src/main/java/stockMarketApiService/ApiCall.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/Application.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/db/controller/RepositoryController.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/db/service/StockNameRepositoryService.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/db/service/StockRepositoryService.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/db/service/WatchlistSeeder.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/entity/PredictionResult.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/entity/StockNames.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/entity/Stocks.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/entity/TopMovers.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/entity/WatchlistEntry.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/repository/PredictionResultRepository.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/repository/StockNameRepository.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/repository/StockRepository.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/repository/WatchlistRepository.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/service/PredictionService.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/service/TechnicalIndicatorService.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/ApiCall.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/stockDataJson/StockData.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/stockDataJson/StockDataResponse.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/stockNamesJson/StockNames.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/stockNamesJson/StockNamesResponse.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/topMoverJson/TopMovers.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/stockMarketApiService/apiResponse/topMoverJson/TopMoversResponse.java
+/Users/home/Documents/Workspace/Projects/QuickTrade/springBackend/src/main/java/com/quicktrade/webclient/WebClientConfig.java
