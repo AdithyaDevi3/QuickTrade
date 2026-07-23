@@ -1,103 +1,105 @@
+// SearchView.swift — stock / ETF search with live API results.
+//
+// Tapping a result opens StockDetailView for the full metrics, chart, and
+// prediction breakdown.  The existing `Match` struct is kept as a typealias
+// so legacy code continues to compile.
+
 import SwiftUI
 import Combine
 
-// Define the structure for the match results including the new logoUrl and matchPercentage
-struct Match: Codable, Identifiable {
-    var id: String { symbol }
-    let symbol: String
-    let name: String
-    let logoUrl: String
-    let matchPercentage: Double
-}
+// MARK: - Legacy alias
 
-// ViewModel class handling the search functionality
-class SearchViewModel: ObservableObject {
-    @Published var query: String = ""
-    @Published var results: [Match] = []
-    
-    private let backendUrl = "http://localhost:8080/api/search"
+/// Backward-compatibility typealias — new code should use `StockMatch` directly.
+typealias Match = StockMatch
 
+// MARK: - ViewModel
+
+/// Manages the search text field and debounces API calls to avoid flooding
+/// the backend on every keystroke.
+@MainActor
+final class SearchViewModel: ObservableObject {
+    @Published var query = ""
+    @Published var results: [StockMatch] = []
+    @Published var isSearching = false
+
+    private var searchTask: Task<Void, Never>?
+
+    /// Fires the search after a 400 ms debounce.
     func searchCompany() {
-        guard !query.isEmpty else { return }
-        let urlString = "\(backendUrl)?query=\(query)"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            
-            guard let data = data else { return }
-            
-            do {
-                let searchResult = try JSONDecoder().decode([Match].self, from: data)
-                DispatchQueue.main.async {
-                    self.results = searchResult
-                }
-            } catch {
-                print("Failed to decode JSON: \(error)")
-            }
-        }.resume()
+        searchTask?.cancel()
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+            results = []
+            return
+        }
+        searchTask = Task {
+            try? await Task.sleep(nanoseconds: 400_000_000)
+            guard !Task.isCancelled else { return }
+            isSearching = true
+            defer { isSearching = false }
+            results = (try? await APIService.shared.searchStocks(query: query)) ?? []
+        }
     }
 }
 
-// The SearchView UI structure
+// MARK: - View
+
+/// Stock search tab — type a ticker or company name, get results, tap for details.
 struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
-    
+
     var body: some View {
-        VStack {
-            HStack {
-                TextField("Enter company name or ticker", text: $viewModel.query)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal,-5)
-                
-                Button(action: {
-                    viewModel.searchCompany()
-                }) {
-                    Text("Search")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.black)
-                        .cornerRadius(8)
-                }
-                
-                .padding(.horizontal,4)
-            }
-            
-            .padding(.top, -10) // Padding to push down from the top
-         
-            List(viewModel.results) { match in
+        NavigationView {
+            VStack(spacing: 0) {
+
+                // ── Search bar ─────────────────────────────────────────────
                 HStack {
-                    // Display the company logo from logoUrl
-                    if let url = URL(string: match.logoUrl) {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                        } placeholder: {
-                            ProgressView()
+                    TextField("Enter company name or ticker", text: $viewModel.query)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: viewModel.query) { _ in
+                            viewModel.searchCompany()
+                        }
+
+                    if viewModel.isSearching {
+                        ProgressView().padding(.leading, 4)
+                    } else {
+                        Button(action: { viewModel.searchCompany() }) {
+                            Text("Search")
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 8)
+                                .background(Color.black)
+                                .cornerRadius(8)
                         }
                     }
-                    
-                    VStack(alignment: .leading) {
-                        Text(match.name)
-                            .font(.headline)
-                        Text(match.symbol)
-                            .font(.subheadline)
-                        Text("Match Percentage: \(match.matchPercentage, specifier: "%.2f")%")
-                            .font(.subheadline)
+                }
+                .padding()
+
+                // ── Results ────────────────────────────────────────────────
+                List(viewModel.results) { match in
+                    NavigationLink(destination: StockDetailView(match: match)) {
+                        HStack(spacing: 12) {
+                            AsyncImage(url: URL(string: match.logoUrl)) { image in
+                                image.resizable().scaledToFit()
+                            } placeholder: {
+                                Image(systemName: "chart.line.uptrend.xyaxis")
+                                    .foregroundColor(.gray)
+                            }
+                            .frame(width: 44, height: 44)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(match.symbol).font(.headline)
+                                Text(match.name).font(.subheadline).foregroundColor(.secondary)
+                                Text(String(format: "Match: %.0f%%", match.matchPercentage))
+                                    .font(.caption).foregroundColor(.secondary)
+                            }
+                        }
                     }
                 }
+                .listStyle(PlainListStyle())
             }
-            .listStyle(PlainListStyle())
+            .navigationBarTitle("Stock Search", displayMode: .inline)
         }
-        .padding()
-        .navigationBarTitle("Stock Search", displayMode: .inline) // Optional: Title at the top
     }
 }
 

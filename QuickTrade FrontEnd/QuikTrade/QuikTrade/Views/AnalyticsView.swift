@@ -1,6 +1,16 @@
+// AnalyticsView.swift — stock analytics with live data and mini price charts.
+//
+// The user searches for stocks in the Search tab and they appear here for deeper
+// analysis. Each row expands to show difficulty-appropriate metrics + a lazy-
+// loaded 30-day mini price chart.  Replaced the 12s timer polling with
+// .task/async-await.
+
 import SwiftUI
+import Charts
 
 // MARK: - Model
+
+/// A stock item that the user has explored.  Kept Codable for @AppStorage persistence.
 struct LikedStock: Codable, Identifiable {
     var id: String { symbol }
     let symbol: String
@@ -10,180 +20,166 @@ struct LikedStock: Codable, Identifiable {
 }
 
 // MARK: - ViewModel
-class AnalyticsViewModel: ObservableObject {
+
+/// ViewModel for AnalyticsView.  Loads liked stocks from the search endpoint
+/// and caches per-ticker metrics and mini-chart data.
+@MainActor
+final class AnalyticsViewModel: ObservableObject {
+
     @Published var likedStocks: [LikedStock] = []
     @Published var selectedStock: LikedStock?
+    @Published var isLoading = false
     @Published var difficulty: String = "Beginner"
-    
-    private let backendUrl = "http://localhost:8080/api/search"
-    private var apiCallTimer: Timer?
-    
+
+    // Cache: ticker → (metrics, history) to avoid re-fetching on every expand
+    private var metricsCache: [String: StockMetrics] = [:]
+    private var historyCache: [String: [StockDataPoint]] = [:]
+    private var predictionCache: [String: PredictionDetail] = [:]
+
     init() {
-        // Optionally preload with demo data in dev mode:
-        #if DEBUG
-        if likedStocks.isEmpty {
-            likedStocks = [
-                LikedStock(symbol: "AAPL", name: "Apple Inc.", logoUrl: "", matchPercentage: 0.92),
-                LikedStock(symbol: "MSFT", name: "Microsoft Corp.", logoUrl: "", matchPercentage: 0.88),
-                LikedStock(symbol: "TSLA", name: "Tesla, Inc.", logoUrl: "", matchPercentage: 0.78)
-            ]
-        }
-        #endif
+        // Seed with popular stocks for instant first-open experience
+        likedStocks = [
+            LikedStock(symbol: "AAPL", name: "Apple Inc.", logoUrl: "", matchPercentage: 100),
+            LikedStock(symbol: "MSFT", name: "Microsoft Corp.", logoUrl: "", matchPercentage: 100),
+            LikedStock(symbol: "NVDA", name: "NVIDIA Corp.", logoUrl: "", matchPercentage: 100),
+            LikedStock(symbol: "TSLA", name: "Tesla Inc.", logoUrl: "", matchPercentage: 100),
+            LikedStock(symbol: "AMZN", name: "Amazon.com Inc.", logoUrl: "", matchPercentage: 100),
+        ]
     }
-    
+
     func selectStock(_ stock: LikedStock) {
-        self.selectedStock = stock
+        selectedStock = stock
     }
-    
-    /// Fetch the list of liked stocks (used onAppear)
-    func fetchLikedStocks() {
-        guard let url = URL(string: backendUrl) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            if let error = error {
-                print("fetchLikedStocks error:", error)
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let result = try JSONDecoder().decode([LikedStock].self, from: data)
-                DispatchQueue.main.async {
-                    self?.likedStocks = result
-                }
-            } catch {
-                print("Failed to decode liked stocks:", error)
-            }
-        }.resume()
-        
-        // throttle next fetch by 12s (optional)
-        apiCallTimer?.invalidate()
-        apiCallTimer = Timer.scheduledTimer(withTimeInterval: 12.0, repeats: false) { [weak self] _ in
-            self?.fetchLikedStocks()
+
+    /// Lazily loads metrics + 30-day history for a ticker when its row expands.
+    func loadDetailsIfNeeded(for ticker: String) async {
+        guard metricsCache[ticker] == nil else { return }
+        do {
+            async let m = APIService.shared.fetchMetrics(ticker: ticker)
+            async let h = APIService.shared.fetchHistorical(ticker: ticker, days: 30)
+            async let p = APIService.shared.fetchPrediction(ticker: ticker)
+            metricsCache[ticker]    = try await m
+            historyCache[ticker]    = try await h
+            predictionCache[ticker] = try? await p
+        } catch {
+            // Metrics unavailable — row still shows, just without live data
         }
     }
-    
-    /// Fetch details for a single stock (if your backend supports that endpoint)
-    func fetchStockDetails(for stock: LikedStock) {
-        let urlString = "\(backendUrl)?query=\(stock.symbol)"
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            if let error = error {
-                print("fetchStockDetails error:", error)
-                return
-            }
-            guard let data = data else { return }
-            // Example: decode a single LikedStock or some detail model
-            // Adjust decoding to match your backend response shape
-            do {
-                let fetched = try JSONDecoder().decode([LikedStock].self, from: data)
-                DispatchQueue.main.async {
-                    // If backend returns a list, replace likedStocks or update selectedStock as needed
-                    if !fetched.isEmpty {
-                        // update the list and selectedStock with the first (or find matching)
-                        self?.likedStocks = fetched
-                        if let found = fetched.first(where: { $0.symbol == stock.symbol }) {
-                            self?.selectedStock = found
-                        }
-                    }
-                }
-            } catch {
-                print("Failed to decode stock details:", error)
-            }
-        }.resume()
-    }
+
+    func metrics(for ticker: String) -> StockMetrics? { metricsCache[ticker] }
+    func history(for ticker: String) -> [StockDataPoint] { historyCache[ticker] ?? [] }
+    func prediction(for ticker: String) -> PredictionDetail? { predictionCache[ticker] }
 }
 
-// MARK: - Parent View
+// MARK: - AnalyticsView
+
+/// Analytics tab — expandable rows with live metrics and mini charts.
 struct AnalyticsView: View {
     @StateObject private var viewModel = AnalyticsViewModel()
-    
+
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Liked Stocks")
-                    .font(.title)
-                    .padding(.top)
-                
+            VStack(alignment: .leading) {
                 List(viewModel.likedStocks) { stock in
                     StockRow(stock: stock, viewModel: viewModel)
                 }
                 .listStyle(PlainListStyle())
-            }
-            .padding(.horizontal)
-            .onAppear {
-                viewModel.fetchLikedStocks()
             }
             .navigationTitle("Analytics")
         }
     }
 }
 
-// MARK: - Row View
+// MARK: - StockRow
+
+/// An expandable analytics row with lazy-loaded metrics and a 30-day mini chart.
 struct StockRow: View {
     let stock: LikedStock
     @ObservedObject var viewModel: AnalyticsViewModel
     @State private var isExpanded = false
-    
+
     var body: some View {
         VStack(spacing: 8) {
+
+            // ── Collapsed header ──────────────────────────────────────────
             HStack {
-                VStack(alignment: .leading) {
-                    Text(stock.name)
-                        .font(.headline)
-                    Text(stock.symbol)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                AsyncImage(url: URL(string: stock.logoUrl)) { img in
+                    img.resizable().scaledToFit()
+                } placeholder: {
+                    Image(systemName: "chart.bar").foregroundColor(.gray)
                 }
-                
+                .frame(width: 32, height: 32)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(stock.name).font(.headline)
+                    Text(stock.symbol).font(.subheadline).foregroundColor(.secondary)
+                }
+
                 Spacer()
-                
-                Button(action: {
-                    // select in VM and toggle expansion
+
+                // Live price badge
+                if let m = viewModel.metrics(for: stock.symbol) {
+                    VStack(alignment: .trailing, spacing: 2) {
+                        Text(m.formattedPrice).font(.subheadline).bold()
+                        Text(m.formattedChangePercent)
+                            .font(.caption)
+                            .foregroundColor(m.isPositive ? .green : .red)
+                    }
+                }
+
+                Button {
                     viewModel.selectStock(stock)
-                    // optionally fetch details for this stock
-                    viewModel.fetchStockDetails(for: stock)
                     withAnimation { isExpanded.toggle() }
-                }) {
+                } label: {
                     Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
                         .foregroundColor(.blue)
-                        .padding(.trailing, 8)
                 }
             }
-            
+
+            // ── Expanded detail ───────────────────────────────────────────
             if isExpanded {
                 VStack(spacing: 12) {
-                    Picker("Difficulty Level", selection: $viewModel.difficulty) {
+
+                    // Difficulty picker
+                    Picker("Difficulty", selection: $viewModel.difficulty) {
                         Text("Beginner").tag("Beginner")
                         Text("Intermediate").tag("Intermediate")
                         Text("Advanced").tag("Advanced")
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    
-                    if let selectedStock = viewModel.selectedStock {
-                        if viewModel.difficulty == "Beginner" {
-                            BeginnerDataView(stock: selectedStock)
-                        } else if viewModel.difficulty == "Intermediate" {
-                            IntermediateDataView(stock: selectedStock)
-                        } else {
-                            AdvancedDataView(stock: selectedStock)
-                        }
-                    } else {
-                        // Fallback content while details load / if not available
-                        Text("No details available")
-                            .foregroundColor(.secondary)
+                    .pickerStyle(.segmented)
+
+                    // Metrics for selected difficulty
+                    let metrics = viewModel.metrics(for: stock.symbol)
+                    let pred    = viewModel.prediction(for: stock.symbol)
+
+                    switch viewModel.difficulty {
+                    case "Intermediate":
+                        IntermediateDataView(stock: stock, metrics: metrics)
+                    case "Advanced":
+                        AdvancedDataView(stock: stock, metrics: metrics, prediction: pred)
+                    default:
+                        BeginnerDataView(stock: stock, metrics: metrics)
+                    }
+
+                    // Mini 30-day price chart
+                    let history = viewModel.history(for: stock.symbol)
+                    if !history.isEmpty {
+                        PriceLineChart(dataPoints: history, ticker: stock.symbol)
+                            .frame(height: 120)
                     }
                 }
                 .padding()
                 .background(Color.gray.opacity(0.08))
                 .cornerRadius(8)
+                .task { await viewModel.loadDetailsIfNeeded(for: stock.symbol) }
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 4)
     }
 }
 
-// MARK: - Previews
+// MARK: - Preview
 #Preview {
     AnalyticsView()
 }
