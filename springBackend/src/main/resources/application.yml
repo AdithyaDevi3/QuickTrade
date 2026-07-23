@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: optional:file:.env[.properties]
   datasource:
-    url: jdbc:postgresql://localhost:5432/stocks_db
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,6 +24,5 @@ logging:
             sql:
               BasicBinder: TRACE
 
-# Polygon.io API key — override with POLYGON_API_KEY environment variable in production
 polygon:
-  api-key: ${POLYGON_API_KEY:mjuTBMGVNRgdO10k4_2tbNeNYBRUu8Vb}
+  api-key: ${POLYGON_API_KEY}

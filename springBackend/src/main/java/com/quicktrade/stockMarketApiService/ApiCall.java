@@ -69,7 +69,7 @@ package com.quicktrade.stockMarketApiService;//package stockMarketApiService;
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //        String formattedDate = yesterday.format(formatter);
 //
-//        return "https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/" + formattedDate + "?adjusted=false&apiKey=mjuTBMGVNRgdO10k4_2tbNeNYBRUu8Vb";
+//        return "https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/" + formattedDate + "?adjusted=false&apiKey=" + apiKey; // use injected key
 //
 //    }
 //
