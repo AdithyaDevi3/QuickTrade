@@ -23,3 +23,7 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+
+# Polygon.io API key — set via POLYGON_API_KEY env var or .env file
+polygon:
+  api-key: ${POLYGON_API_KEY}

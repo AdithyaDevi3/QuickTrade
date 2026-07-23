@@ -1,0 +1,33 @@
+# ── Secrets — NEVER commit these ─────────────────────────────────────────────
+.env
+**/.env
+*.env
+
+# Allow the example templates (no real values inside)
+!.env.example
+!**/.env.example
+
+# ── Java / Maven ──────────────────────────────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+
+# ── Xcode / iOS ───────────────────────────────────────────────────────────────
+xcuserdata/
+*.xcuserstate
+DerivedData/
+*.xcarchive
+*.ipa
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
