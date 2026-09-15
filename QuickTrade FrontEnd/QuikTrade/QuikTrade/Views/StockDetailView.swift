@@ -27,6 +27,8 @@ struct StockDetailView: View {
     @State private var selectedTab = 0
     @State private var isLoading = true
     @State private var errorMessage: String?
+    @State private var showOrderSheet = false
+    @StateObject private var portfolioViewModel = PortfolioViewModel()
 
     var body: some View {
         ScrollView {
@@ -58,6 +60,18 @@ struct StockDetailView: View {
         }
         .navigationTitle(match.symbol)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Trade") { showOrderSheet = true }
+                    .disabled(metrics == nil)
+            }
+        }
+        .sheet(isPresented: $showOrderSheet) {
+            if let metrics {
+                OrderSheetView(ticker: match.symbol, currentPrice: metrics.currentPrice,
+                                portfolioViewModel: portfolioViewModel)
+            }
+        }
         .task { await loadAll() }
     }
 

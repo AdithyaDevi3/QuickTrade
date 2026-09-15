@@ -10,6 +10,9 @@
 	</parent>
 	<properties>
 		<java.version>21</java.version>
+		<!-- Spring Boot 3.4.3's managed Mockito/ByteBuddy can't instrument classes on this JDK; force newer releases. -->
+		<mockito.version>5.20.0</mockito.version>
+		<byte-buddy.version>1.17.7</byte-buddy.version>
 	</properties>
 	<groupId>com.novae</groupId>
 	<artifactId>QuickTrade</artifactId>
@@ -107,6 +110,25 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<!-- JWT -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.12.6</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.12.6</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.12.6</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

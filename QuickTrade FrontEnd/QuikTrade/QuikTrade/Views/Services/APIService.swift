@@ -50,13 +50,40 @@ final class APIService {
         return url
     }
 
+    private let encoder = JSONEncoder()
+
     /// Generic fetch: GETs the URL, decodes the body as `T`.
     private func fetch<T: Decodable>(_ url: URL) async throws -> T {
-        let (data, response) = try await session.data(from: url)
+        var request = URLRequest(url: url)
+        addAuthHeader(&request)
+        let (data, response) = try await session.data(for: request)
         guard let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else {
             throw URLError(.badServerResponse)
         }
         return try decoder.decode(T.self, from: data)
+    }
+
+    /// Sends a JSON body via POST and decodes the response as `T`.
+    private func post<Body: Encodable, T: Decodable>(_ path: String, body: Body) async throws -> T {
+        var request = URLRequest(url: try url(path))
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try encoder.encode(body)
+        addAuthHeader(&request)
+        let (data, response) = try await session.data(for: request)
+        guard let http = response as? HTTPURLResponse else { throw URLError(.badServerResponse) }
+        guard (200..<300).contains(http.statusCode) else {
+            let message = String(data: data, encoding: .utf8) ?? "Request failed"
+            throw APIError.server(status: http.statusCode, message: message)
+        }
+        return try decoder.decode(T.self, from: data)
+    }
+
+    /// Attaches the stored JWT (if any) as a Bearer token.
+    private func addAuthHeader(_ request: inout URLRequest) {
+        if let token = KeychainHelper.loadToken() {
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
     }
 
     // MARK: - Search
@@ -147,5 +174,51 @@ final class APIService {
             URLQueryItem(name: "count", value: "\(count)")
         ])
         return try await fetch(url)
+    }
+
+    // MARK: - Auth
+
+    /// Registers a new account and provisions its starting $100,000 paper-trading portfolio.
+    func register(email: String, password: String) async throws -> AuthResponse {
+        try await post("/api/auth/register", body: AuthCredentials(email: email, password: password))
+    }
+
+    /// Logs in an existing account.
+    func login(email: String, password: String) async throws -> AuthResponse {
+        try await post("/api/auth/login", body: AuthCredentials(email: email, password: password))
+    }
+
+    // MARK: - Portfolio (requires auth)
+
+    /// Returns cash balance, holdings, and total account value.
+    func fetchPortfolio() async throws -> Portfolio {
+        let url = try url("/api/portfolio")
+        return try await fetch(url)
+    }
+
+    /// Returns trade history, most recent first.
+    func fetchTrades() async throws -> [Trade] {
+        let url = try url("/api/portfolio/trades")
+        return try await fetch(url)
+    }
+
+    /// Places a buy or sell order at the latest available market price.
+    func placeOrder(ticker: String, side: TradeSide, quantity: Double) async throws -> Trade {
+        try await post("/api/portfolio/orders", body: OrderRequest(ticker: ticker, side: side, quantity: quantity))
+    }
+}
+
+private struct AuthCredentials: Encodable {
+    let email: String
+    let password: String
+}
+
+enum APIError: LocalizedError {
+    case server(status: Int, message: String)
+
+    var errorDescription: String? {
+        switch self {
+        case .server(_, let message): return message
+        }
     }
 }
