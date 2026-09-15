@@ -27,3 +27,8 @@ logging:
 # Polygon.io API key — set via POLYGON_API_KEY env var or .env file
 polygon:
   api-key: ${POLYGON_API_KEY}
+
+# JWT signing secret — set via JWT_SECRET env var or .env file (must be >= 256 bits for HS256)
+jwt:
+  secret: ${JWT_SECRET:dev-only-insecure-secret-change-me-please-32bytes-min}
+  expiration-ms: 604800000

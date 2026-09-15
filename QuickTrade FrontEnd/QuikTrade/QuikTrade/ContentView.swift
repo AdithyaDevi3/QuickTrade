@@ -11,44 +11,53 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("difficulty") var difficulty: String = "Beginner"
+    @EnvironmentObject var auth: AuthViewModel
 
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
+        if auth.isAuthenticated {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
 
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }
+                SearchView()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
 
-            AnalyticsView()
-                .tabItem {
-                    Image(systemName: "chart.line.uptrend.xyaxis")
-                    Text("Analytics")
-                }
+                AnalyticsView()
+                    .tabItem {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                        Text("Analytics")
+                    }
 
-            PredictionView()
-                .tabItem {
-                    Image(systemName: "wand.and.stars")
-                    Text("Predict")
-                }
+                PredictionView()
+                    .tabItem {
+                        Image(systemName: "wand.and.stars")
+                        Text("Predict")
+                    }
 
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "book.fill")
-                    Text("Learn")
-                }
+                PortfolioView()
+                    .tabItem {
+                        Image(systemName: "wallet.pass.fill")
+                        Text("Portfolio")
+                    }
+
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "book.fill")
+                        Text("Learn")
+                    }
+            }
+        } else {
+            LoginView()
         }
     }
 }
 
 #Preview {
-    ContentView()
-}
-
+    ContentView().environmentObject(AuthViewModel())
 }
