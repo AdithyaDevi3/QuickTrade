@@ -10,10 +10,19 @@ import Foundation
 // MARK: - Configuration
 
 /// App-wide networking configuration.
-/// Override `baseURL` with a release URL in a production build.
+/// Debug builds hit the local backend; Release builds hit the deployed API.
+/// Override `QUICKTRADE_API_BASE_URL` in the Release scheme's environment/Info.plist
+/// once the backend has a real deployment URL.
 enum Config {
     /// Base URL for the QuickTrade Integrator REST API.
-    static let baseURL = "http://localhost:8080"
+    static let baseURL: String = {
+        #if DEBUG
+        return "http://localhost:8080"
+        #else
+        return Bundle.main.object(forInfoDictionaryKey: "QUICKTRADE_API_BASE_URL") as? String
+            ?? "https://api.quicktrade.app"
+        #endif
+    }()
 }
 
 // MARK: - APIService
