@@ -1,4 +1,5 @@
 package quicktrade.com.entity;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -7,8 +8,11 @@ import jakarta.persistence.Table;
 @Table(name = "stock_names")
 public class StockNames {
     @Id
+    @Column(name = "symbol")
     private String symbol;
+    @Column(name = "name")
     private String name;
+    @Column(name = "logoUrl")
     private String logoUrl;
 
     // Getters and Setters

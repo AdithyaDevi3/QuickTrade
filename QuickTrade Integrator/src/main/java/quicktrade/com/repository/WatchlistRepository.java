@@ -28,4 +28,22 @@ public interface WatchlistRepository extends JpaRepository<WatchlistEntry, Long>
      * @return the matching entry, or empty
      */
     Optional<WatchlistEntry> findByTicker(String ticker);
+
+    /**
+     * Checks whether a ticker already exists in the watchlist.
+     * Used by {@code WatchlistSeeder} to avoid duplicate inserts.
+     *
+     * @param ticker ticker symbol to check
+     * @return true if the ticker is already present
+     */
+    boolean existsByTicker(String ticker);
+
+    /**
+     * Returns all default (auto-seeded) watchlist entries.
+     * Used by {@code PredictionService} to know which tickers to refresh.
+     *
+     * @param isDefault true to retrieve only seeded entries
+     * @return list of default entries
+     */
+    List<WatchlistEntry> findByIsDefault(boolean isDefault);
 }

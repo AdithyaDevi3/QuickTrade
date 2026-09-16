@@ -4,10 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * PredictionResult (read-only mirror) — maps to the {@code prediction_results}
- * table written by the springBackend's {@code PredictionService}.
- *
- * <p>The Integrator only reads this table; all writes happen in springBackend.</p>
+ * PredictionResult — maps to the {@code prediction_results} table, computed and
+ * persisted by this service's own {@code PredictionService} on a daily schedule.
  */
 @Entity
 @Table(name = "prediction_results")
@@ -72,4 +70,24 @@ public class PredictionResult {
     public String getSignal() { return signal; }
     public Integer getDataPointsUsed() { return dataPointsUsed; }
     public LocalDateTime getComputedAt() { return computedAt; }
+
+    // ── Setters ───────────────────────────────────────────────────────────────
+
+    public void setTicker(String ticker) { this.ticker = ticker; }
+    public void setRsi(Double rsi) { this.rsi = rsi; }
+    public void setMacd(Double macd) { this.macd = macd; }
+    public void setMacdSignal(Double macdSignal) { this.macdSignal = macdSignal; }
+    public void setMacdHistogram(Double macdHistogram) { this.macdHistogram = macdHistogram; }
+    public void setSma20(Double sma20) { this.sma20 = sma20; }
+    public void setSma50(Double sma50) { this.sma50 = sma50; }
+    public void setBollingerUpper(Double bollingerUpper) { this.bollingerUpper = bollingerUpper; }
+    public void setBollingerLower(Double bollingerLower) { this.bollingerLower = bollingerLower; }
+    public void setPredictionScore(Double predictionScore) { this.predictionScore = predictionScore; }
+    public void setSignal(String signal) { this.signal = signal; }
+    public void setDataPointsUsed(Integer dataPointsUsed) { this.dataPointsUsed = dataPointsUsed; }
+
+    @PrePersist
+    private void prePersist() {
+        if (computedAt == null) computedAt = LocalDateTime.now();
+    }
 }

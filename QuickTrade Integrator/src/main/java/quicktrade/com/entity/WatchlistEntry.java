@@ -3,11 +3,8 @@ package quicktrade.com.entity;
 import jakarta.persistence.*;
 
 /**
- * WatchlistEntry (read-only mirror) — maps to the {@code watchlist_entries}
- * table seeded by the springBackend's {@code WatchlistSeeder}.
- *
- * <p>The Integrator reads this table to know the type ("STOCK" / "ETF") of
- * each ticker when building prediction response DTOs.</p>
+ * WatchlistEntry — maps to the {@code watchlist_entries} table, seeded at
+ * startup by this service's own {@code WatchlistSeeder}.
  */
 @Entity
 @Table(name = "watchlist_entries")
@@ -26,8 +23,21 @@ public class WatchlistEntry {
     @Column(name = "is_default")
     private boolean isDefault;
 
+    public WatchlistEntry() {
+    }
+
+    public WatchlistEntry(String ticker, String type, boolean isDefault) {
+        this.ticker = ticker;
+        this.type = type;
+        this.isDefault = isDefault;
+    }
+
     public Long getId() { return id; }
     public String getTicker() { return ticker; }
     public String getType() { return type; }
     public boolean isDefault() { return isDefault; }
+
+    public void setTicker(String ticker) { this.ticker = ticker; }
+    public void setType(String type) { this.type = type; }
+    public void setDefault(boolean isDefault) { this.isDefault = isDefault; }
 }
