@@ -85,21 +85,21 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.20.0</version>
+			<version>2.25.5</version>
 		</dependency>
 
 		<!-- Log4j Core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.20.0</version>
+			<version>2.25.5</version>
 		</dependency>
 
 		<!-- Log4j SLF4J Impl -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.20.0</version>
+			<version>2.25.5</version>
 		</dependency>
 
 		<!-- Spring Boot Starter AOP -->
